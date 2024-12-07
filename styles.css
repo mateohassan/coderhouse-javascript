@@ -1,0 +1,147 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Mulish, monospace;
+  font-size: large;
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.logo {
+  width: 30px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: larger;
+  background-color: #ff8520;
+  border-bottom: 3px solid #a1a1a1;
+}
+header nav div .navbar-brand {
+  max-width: 200px;
+  font-family: Josefin Sans;
+  font-size: 1.5em;
+}
+.bi {
+  font-size:1.5em;
+}
+
+footer {
+  border: none;
+  font-size: larger;
+  border-top: 3px solid #a1a1a1;
+  background-color: #333;
+}
+footer div span {
+  color: #ffffff;
+}
+
+.titulo {
+  grid-area: titulo;
+  text-align: center;
+  align-self: center;
+}
+
+.precio {
+  text-align: center;
+  align-self: center;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.imagen {
+  grid-area: imagen;
+  border-left: 3px;
+  align-self: center;
+}
+.imagen img {
+  width: 100%;
+  object-fit: contain;
+  border-width: 2px;
+}
+
+.imagenProducto {
+  grid-area: imagen;
+  border-right: #cccccc solid 1px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.nombreProducto {
+  grid-area: nombre;
+  align-content: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.precioProducto {
+  grid-area: precio;
+  align-content: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.botonProducto {
+  grid-area: boton;
+  text-align: center;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+}
+
+.max {
+  grid-area: "max";
+  width: 100px;
+  display: inline;
+}
+
+.min {
+  grid-area: "min";
+  width: 100px;
+  display: inline;
+}
+
+.buscar {
+  grid-area: "buscar";
+}
+
+form{
+  display: block;
+}
+
+label {
+  display:inline-flex;
+  align-items: center;
+  margin: 5px;
+}
+
+input {
+  margin: 5px;
+}
+
+.containerFiltro {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "max min buscar";
+}
+
+.containerProducto {
+  border: #a1a1a1 solid 1px;
+  border-radius: 10px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas: "imagen nombre nombre" "imagen precio boton";
+}
+
