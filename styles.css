@@ -43,34 +43,6 @@ footer div span {
   color: #ffffff;
 }
 
-.titulo {
-  grid-area: titulo;
-  text-align: center;
-  align-self: center;
-}
-
-.precio {
-  text-align: center;
-  align-self: center;
-}
-
-.botones {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-}
-
-.imagen {
-  grid-area: imagen;
-  border-left: 3px;
-  align-self: center;
-}
-.imagen img {
-  width: 100%;
-  object-fit: contain;
-  border-width: 2px;
-}
-
 .imagenProducto {
   grid-area: imagen;
   border-right: #cccccc solid 1px;
@@ -144,4 +116,3 @@ input {
   grid-template-columns: auto 1fr 1fr;
   grid-template-areas: "imagen nombre nombre" "imagen precio boton";
 }
-
