@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
@@ -20,53 +20,53 @@
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand align-middle">
-                    <img src="logo.png" alt="logo" class="logo">
-                    Zeus Store
-                </a>
-                <div class="dropdown">
-                  <button class="dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-cart"></i>
-                  </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
-
-                </div>
+              <a class="navbar-brand align-middle">
+                  <img src="img/logo.png" alt="logo" class="logo">
+                  Zeus Store
+              </a>
+              <div class="dropdown">
+                <button id="abrirCarrito" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-cart"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" id="carrito" aria-labelledby="cartDropdown">
+                </ul>
+              </div>
             </div>
         </nav>
     </header>
 
     <main>
       <div class="container">
+        <h1>Catalogo</h1>
         <div class="row">
           <div class="col-3">
-            <h1>Catalogo</h1>
-            <button onclick=sinFiltro()>Quitar filtros</button>
+            <button id="quitarFiltro">Quitar filtros</button>
             <h2>Precio</h2>
             <div class="containerFiltro">
               <input type="number" class="max" id="max" placeholder="Maximo">
               <input type="number" class="min" id="min" placeholder="Minimo">
-              <button class="buscar" onclick=filtrarPrecio()>Filtrar</button>
+              <button class="buscar" id="filtrarPrecio">Filtrar</button>
             </div>
             <h2>Categoria</h2>
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarTipo('procesador')">CPUs
+                  <input type="radio" name="opcion" id="filtrarTipoProcesador">CPUs
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarTipo('placavideo')">GPUs
+                  <input type="radio" name="opcion" id="filtrarTipoPlaca">GPUs
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarTipo('ram')">RAM
+                  <input type="radio" name="opcion" id="filtrarTipoRam">RAM
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarTipo('disco')">SSDs
+                  <input type="radio" name="opcion" id="filtrarTipoDisco">SSDs
                 </label>
               </div>
             </form>
@@ -74,27 +74,27 @@
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMarca('intel')">Intel
+                  <input type="radio" name="opcion" id="filtrarMarcaIntel">Intel
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMarca('amd')">AMD
+                  <input type="radio" name="opcion" id="filtrarMarcaAMD">AMD
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMarca('nvidia')">Nvidia
+                  <input type="radio" name="opcion" id="filtrarMarcaNvidia">Nvidia
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMarca('kingston')">Kingston
+                  <input type="radio" name="opcion" id="filtrarMarcaKingston">Kingston
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMarca('hiksemi')">Hiksemi
+                  <input type="radio" name="opcion" id="filtrarMarcaHiksemi">Hiksemi
                 </label>
               </div>
             </form>
@@ -102,17 +102,17 @@
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarNucleos(0, 6)">Menos de 6
+                  <input type="radio" name="opcion" id="filtrarNucleos6-">Menos de 6
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarNucleos(5, 17)">6 a 16
+                  <input type="radio" name="opcion" id="filtrarNucleos616">6 a 16
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarNucleos(17, 999)">Mas de 16
+                  <input type="radio" name="opcion" id="filtrarNucleos16+">Mas de 16
                 </label>
               </div>
             </form>
@@ -120,17 +120,17 @@
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMemoria(0, 8)">Menos de 8gb
+                  <input type="radio" name="opcion" id="filtrarMemoria8-">Menos de 8gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMemoria(7, 13)">8gb a 12gb
+                  <input type="radio" name="opcion" id="filtrarMemoria812">8gb a 12gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarMemoria(12, 999)">Mas de 12gb
+                  <input type="radio" name="opcion" id="filtrarMemoria12+">Mas de 12gb
                 </label>
               </div>
             </form>
@@ -138,17 +138,17 @@
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarRam(0, 8)">Menos de 8gb
+                  <input type="radio" name="opcion" id="filtrarRam8-">Menos de 8gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarRam(7, 17)">8gb a 16gb
+                  <input type="radio" name="opcion" id="filtrarRam816">8gb a 16gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarRam(16, 999)">Mas de 16gb
+                  <input type="radio" name="opcion" id="filtrarRam16+">Mas de 16gb
                 </label>
               </div>
             </form>
@@ -156,17 +156,17 @@
             <form>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarAlm(0, 256)">Menos de 256gb
+                  <input type="radio" name="opcion" id="filtrarAlm25-">Menos de 256gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarAlm(255, 481)">256gb a 480gb
+                  <input type="radio" name="opcion" id="filtrarAlm2548">256gb a 480gb
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" name="opcion" onclick="filtrarAlm(480, 9999)">Mas de 480gb
+                  <input type="radio" name="opcion" id="filtrarAlm48+">Mas de 480gb
                 </label>
               </div>
             </form>
@@ -177,14 +177,78 @@
       </div>
     </main>
 
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modalEditado">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="checkout">
+            <div class="row">
+              <div class="col-2 text-center">
+                <p>Foto</p>
+              </div> 
+              <div class="col-4 text-center">
+                <p>Nombre</p>
+              </div>      
+              <div class="col-2 text-center">
+                <p>Precio</p>
+              </div>      
+              <div class="col-2 text-center">
+                <p>Cantidad</p>
+              </div>               
+              <div class="col-2 text-center">
+                <p>Eliminar</p>
+              </div>  
+            </div>
+            <form id="formularioCheckout">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" value="Mateo Hassan" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" value="lorem.ipsum@gmail.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="ubicacion" class="form-label">Ubicación</label>
+                <input type="text" class="form-control" id="ubicacion" value="Pergamino, Buenos Aires" required>
+              </div>
+              <div class="mb-3">
+                <label for="tarjeta" class="form-label">Tarjeta</label>
+                <input type="tel" class="form-control" id="tarjeta" value="123456789011" required>
+              </div>
+              <button id="botonComprar">Comprar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="graciasModal" tabindex="-2" aria-labelledby="graciasModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="thankYouModalLabel">Gracias!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Gracias por tu compra!</p>
+            <p>Te enviaremos un correo electrónico con la información del envío.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="d-flex flex-wrap justify-content-between align-items-center container-fluid py-3">
         <div>
-            <img src="logo.png" alt="logo" class="logo">
+            <img src="img/logo.png" alt="logo" class="logo">
             <span>© 2024 ZeusStore</span>
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

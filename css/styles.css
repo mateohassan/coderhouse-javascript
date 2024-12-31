@@ -43,12 +43,36 @@ footer div span {
   color: #ffffff;
 }
 
+.botonComprar {
+  font-size: 1.25em;
+}
+
+#carrito {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#botonesCarrito {
+  display:flex;
+  width: 100%;
+  justify-content: space-around;
+  
+}
+
+#carritoVacio {
+  text-align: center;
+}
+
 .imagenProducto {
   grid-area: imagen;
   border-right: #cccccc solid 1px;
   width: 200px;
   height: 200px;
   object-fit: contain;
+}
+.containerCarrito .imagenProducto {
+  width: 100px;
+  height: 100px;
 }
 
 .nombreProducto {
@@ -67,7 +91,6 @@ footer div span {
 
 .botonProducto {
   grid-area: boton;
-  text-align: center;
   margin: auto;
   height: fit-content;
   width: fit-content;
@@ -115,4 +138,17 @@ input {
   display: grid;
   grid-template-columns: auto 1fr 1fr;
   grid-template-areas: "imagen nombre nombre" "imagen precio boton";
+}
+
+.containerCarrito {
+  width: 100%;
+  white-space: nowrap;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "imagen nombre boton" "imagen precio boton";
+}
+
+.modalEditado {
+  max-width: 90%;
 }
